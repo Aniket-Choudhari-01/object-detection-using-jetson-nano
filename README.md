@@ -1,22 +1,29 @@
-# Object Detection on Jetson Nano
+# Object Detection Using Jetson Nano NVIDIA
+Internship work done for the IP1201 course of our 3rd Semester
 
-This repository provides a guide to performing object detection on Jetson Nano using the `jetson-inference` library. The guide includes steps for detecting objects in images, videos, and live camera streams using pre-trained models.
+### Team Members
+- Aniket Choudhari (CS22B1010, GitHub:[Aniket-Choudhari-01](https://github.com/Aniket-Choudhari-01))
+- Aditya Kumar Singh (CS22B1001, GitHub:[Adityacse1001](https://github.com/Adityacse1001/Adityacse1001))
+
+## Overview
+This project focuses on detecting objects using the Jetson Nano with the jetson-inference library, utilizing pre-trained models to detect objects in images, videos, and live camera feeds.
 
 ## Table of Contents
 
-1. [Setup Jetson Nano](#setup-jetson-nano)
-2. [Install jetson-inference](#install-jetson-inference)
-3. [Running Object Detection](#running-object-detection)
+- [Setup Jetson Nano](#setup-jetson-nano)
+- [Install jetson-inference](#install-jetson-inference)
+- [Running Object Detection](#running-object-detection)
    - [On Static Images](#on-static-images)
    - [On Video Files](#on-video-files)
    - [On Multiple Images](#on-multiple-images)
    - [On Live Camera Stream](#on-live-camera-stream)
-4. [Customization](#customization)
+- [Customization](#customization)
    - [Changing Detection Models](#changing-detection-models)
    - [Adjusting Detection Sensitivity](#adjusting-detection-sensitivity)
    - [Customizing Overlay](#customizing-overlay)
-5. [Optimizing Performance](#optimizing-performance)
-6. [References](#references)
+- [Optimizing Performance](#optimizing-performance)
+- [Results](#results)
+- [References](#references)
 
 ## Setup Jetson Nano
 
@@ -89,7 +96,28 @@ You can customize the overlay options to display bounding boxes, labels, and con
 python3 detectnet.py --overlay=box,labels,conf input.jpg output.jpg
 ```
 The overlay options include box, labels, conf, and none.
+## Optimizing Performance
+The first time you run a model, TensorRT will take a few minutes to optimize it for your device. After that, the model will load faster because the optimized version is saved on your device.
+## Results
+#### Object detection using webcam streaming:
+<p float="left">
+  <img src="video_Result.jpg" width="500" height="500" />
+  <img src="Video2_Result.jpg" width="500" height="500" />
+</p>
+
+#### Detecting Students in the Mess:
+![live video detection](live_video_result.jpg)
+#### Detecting Students in ths hostel using face and person recognition
+![live video detection](Live2_video_result.jpg)
 
 ## References
+
+#### Jetson Inference
+- [Jetson Inference GitHub Repository](https://github.com/dusty-nv/jetson-inference)
+#### NVIDIA Jetson Nano Developer Kit
+- [NVIDIA Jetson Nano Developer Kit](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/)
+#### JetPack SDK
+- [JetPack SDK Documentation](https://developer.nvidia.com/embedded/jetpack)
+
 
 
